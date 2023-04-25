@@ -94,6 +94,14 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/deadlock-detect",
+            "netlifyToken": "ZY0zJ6ar8UGjT9uzvXaKxcVowBs5ZwsbZei9pIh66Zc",
+            "siteId": ""
+          }
         }
       }
     }
