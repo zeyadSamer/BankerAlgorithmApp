@@ -25,3 +25,33 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+# test example
+
+this.maticees=
+  {'Allocation Matrix':{
+    title:'Allocation Matrix',
+    rowsCount:5,
+    columnsCount:3,
+    
+   data: [[0,1,0],[2,0,0],[3,0,2],[2,1,1],[0,0,2]]
+  
+  },
+  'Maximum Need Matrix':{
+    title:'Maximum Need Matrix',
+    rowsCount:5,
+    columnsCount:3,
+  
+    data:[[7,5,3],[3,2,2],[9,0,2],[2,2,2],[4,3,3]]},
+  'Available Matrix':{
+    title:'Matrix',
+    rowsCount:1,
+    columnsCount:3,
+
+    data:[3,3,2]}
+
+
+
+  }

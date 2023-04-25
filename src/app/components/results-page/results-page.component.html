@@ -1,0 +1,27 @@
+<div class="parent">
+        
+<header>Deadlock Detector</header>
+     
+   
+    <div class="results ">
+
+        <p>The System is</p>
+        <p [ngClass]="messageClass">{{resultMessage}}</p>
+
+
+
+
+    </div>
+
+
+
+    <p class="sequence " *ngIf="isSafe">Safe sequence is {{messageSequence}} </p>
+
+
+
+
+
+
+
+
+</div>

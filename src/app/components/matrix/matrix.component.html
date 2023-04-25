@@ -1,0 +1,57 @@
+<div class="parent">
+    <h3>
+       Enter the {{matrix.title}}
+    </h3>
+
+    <table *ngIf="tableRows.length>1;">
+  
+        <tr>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <!-- <th>D</th> -->
+        </tr>
+      
+        <tr *ngFor="let row of tableRows"  >
+            
+            <td *ngFor="let column of tableColumns"> <input  [(ngModel)]="matrix.data[row][column]"    type="number" name=`cell${row}${column}` 
+            
+                
+                ></td>
+            
+       
+        </tr>
+        
+
+   
+      
+
+
+    </table>
+
+
+
+   <table *ngIf="tableRows.length===1">
+    <tr>
+        <th>A</th>
+        <th>B</th>
+        <th>C</th>
+        <!-- <th>D</th> -->
+    </tr>
+
+    <tr >
+        <td *ngFor="let column of tableColumns"> <input [(ngModel)]="matrix.data[column]"  (ngModelChange)="printMatrix()"  type="number" name=`cell${row}${column}` 
+        
+            
+            ></td>
+       
+
+    </tr>
+
+   </table>
+
+
+
+
+
+    </div>

@@ -1,0 +1,12 @@
+<div class="parent" [@cardSweep]="cardState">
+    
+<header>Deadlock Detector</header>
+
+    <app-matrix [matrix]="matrices[selectedMatrixIndex]"  (updateMatrixUIEvent)="getNextMatrix()" ></app-matrix>
+
+
+ <button class="next" (click)="getNextMatrix()">
+   Next
+ </button>
+
+</div>
