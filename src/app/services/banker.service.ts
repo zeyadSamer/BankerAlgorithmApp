@@ -11,7 +11,7 @@ export class BankerService {
 
   private matricees:DynamicMatricesObject={} ;
   private safeSequence:number[]=[];
-  private isSafe!:boolean;
+  private isSafe!:boolean | undefined;
 
 
 
@@ -20,6 +20,12 @@ export class BankerService {
    
 
 
+  }
+  resetData(){
+    this.matricees={};
+    this.safeSequence=[];
+    this.isSafe=undefined;
+    this.safeSequence=[];
   }
 
 
@@ -149,6 +155,9 @@ for(let flag of tookWhatINeedflag){
 console.log('safe sequence:');
 console.log(this.safeSequence);
 this.isSafe=true;
+
+
+
 return true;
 
 

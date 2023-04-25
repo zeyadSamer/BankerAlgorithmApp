@@ -27,6 +27,7 @@ new Matrix('Available Matrix',1,3)];
   constructor(private router:Router,private bankerService:BankerService) { }
 
   ngOnInit(): void {
+    this.bankerService.resetData();
   }
 
   getNextMatrix(){

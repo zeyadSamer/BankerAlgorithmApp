@@ -12,7 +12,7 @@ export class ResultsPageComponent implements OnInit {
 
 
 
-  isSafe!:boolean;
+  isSafe!:boolean | undefined;
   sequence!:number[];
   messageSequence!:string[];
   messageClass!:string;
@@ -30,6 +30,8 @@ export class ResultsPageComponent implements OnInit {
 
    if(this.isSafe===undefined){
     this.router.navigateByUrl('');
+    this.bankerService.resetData();
+     
     console.log('hee')
    }
 
