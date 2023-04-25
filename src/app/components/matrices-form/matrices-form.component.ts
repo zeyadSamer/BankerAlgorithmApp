@@ -46,7 +46,8 @@ new Matrix('Available Matrix',1,3)];
       this.bankerService.setMatricees(this.matrices); 
        this.bankerService.applyBanker( );
     
-      this.router.navigate(['resultsPage']);
+      this.router.navigateByUrl('/resultsPage');
+      this.selectedMatrixIndex=0;//reset
 
 
     }

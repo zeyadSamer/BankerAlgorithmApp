@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
 import { BankerService } from 'src/app/services/banker.service';
 
 @Component({
@@ -17,7 +18,7 @@ export class ResultsPageComponent implements OnInit {
   messageClass!:string;
   resultMessage!:string;
 
-  constructor(private bankerService:BankerService) { }
+  constructor(private bankerService:BankerService,private router:Router) { }
 
   ngOnInit(): void {
 
@@ -26,6 +27,13 @@ export class ResultsPageComponent implements OnInit {
    this.isSafe=this.bankerService.getSafeStatus();
    this.sequence=this.bankerService.getSafeSequence();
    this.messageSequence=this.sequence.map((item)=>'P'+item);
+
+   if(this.isSafe===undefined){
+    this.router.navigateByUrl('');
+    console.log('hee')
+   }
+
+
 
     console.log('isSafe',this.isSafe )
 
@@ -37,7 +45,7 @@ export class ResultsPageComponent implements OnInit {
       this.resultMessage="Unsafe"
     }
     
-    // 
+
   }
 
 }
