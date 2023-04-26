@@ -29,12 +29,51 @@ new Matrix('Available Matrix',1,3)];
   ngOnInit(): void {
     this.bankerService.resetData();
   }
+  private validateMatrix(matrix:Matrix):boolean{
+        
+
+    if(this.matrices[this.selectedMatrixIndex].rowsCount>1){
+    for(let i=0;i<matrix.rowsCount;i++){
+        for(let j=0;j<matrix.columnsCount;j++){
+
+            if(matrix.data[i][j]===undefined || matrix.data[i][j]<0 ){
+                console.log(matrix.data[i][j])
+                console.log('false')
+                return false;
+              }
+
+        }
+
+    }  
+   
+  }else{
+    for(let i=0;i<matrix.columnsCount;i++){
+
+
+      if(matrix.data[i]===undefined || matrix.data[i]<0 ){
+        return false;
+      }
+       }
+
+}
+
+return true;
+  }
+  
+  
 
   getNextMatrix(){
 
     //send selectedmatrix to service
- 
-    
+
+  
+   let isValidData:boolean=this.validateMatrix(this.matrices[this.selectedMatrixIndex])
+    if(!isValidData){
+      alert('matrix data is not valid')
+      return;
+    }
+
+
     if(this.selectedMatrixIndex<2){
       
 

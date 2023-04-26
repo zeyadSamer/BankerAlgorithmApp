@@ -6,6 +6,18 @@ export class Matrix{
 
     public data:any[] ; //this array may include numbers(1d) or arrays (2d array)
 
+
+
+   
+
+
+
+
+
+
+
+
+
     
     public static  add(a:Matrix,b:Matrix):Matrix{
         let result:Matrix=new Matrix('Matrix',a.rowsCount,a.columnsCount);
@@ -43,7 +55,7 @@ export class Matrix{
         this.columnsCount=columnsCount;
         // creating 2d array and filling at zeroes
         if(rowsCount>1){
-        this.data = Array.from({ length: rowsCount }, () => Array.from({ length: columnsCount }, () => 0));
+        this.data = Array.from({ length: rowsCount }, () => Array.from({ length: columnsCount }));
         }else{
             this.data=Array.from({length:columnsCount},()=>0);
         }
