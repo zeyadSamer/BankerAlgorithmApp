@@ -21,7 +21,7 @@ export class BankerService {
 
 
   }
-  resetData(){
+ public resetData(){
     this.matricees={};
     this.safeSequence=[];
     this.isSafe=undefined;
@@ -29,28 +29,24 @@ export class BankerService {
   }
 
 
-  getSafeSequence(){
+  public getSafeSequence(){
     return this.safeSequence;
   }
-  getSafeStatus(){
+  public getSafeStatus(){
     return this.isSafe;
   }
 
 
 
-setMatricees(matricees:Matrix[]){
+  public setMatricees(matricees:Matrix[]){
 
   for(let matrix of matricees){
     let key=matrix.title
     this.matricees[key]=matrix ;
   }
 
-  console.log('received matricees')
-  console.log(matricees)
-//to be removed
-  
-  console.log('test')
-  console.log(this.matricees)
+
+
 
 }
 
@@ -62,7 +58,6 @@ private computeNeedMatrix(){
 
  
  let needMatrix=Matrix.subtract(maxNeed,allocation);
- console.log('need',needMatrix)
 
  return needMatrix
   
@@ -71,8 +66,7 @@ private computeNeedMatrix(){
 private isAvailableSatisfyProcessNeed(available:number[],need:number[]):boolean{
   for(let i=0;i<available.length;i++){
     if(available[i]<need[i]){
-      console.log(`availabilty failed`)
-      console.log(available,need)
+
       return false;
     
     }
@@ -80,7 +74,7 @@ private isAvailableSatisfyProcessNeed(available:number[],need:number[]):boolean{
 
   
   }
-  console.log('availability success')
+
 
   return true;
 
@@ -113,16 +107,13 @@ let processFound:boolean=true;
 
 
 while(this.safeSequence.length<numberOfProcesses  && processFound){
-  console.log('am here,this is safe seq')
-  console.log(this.safeSequence)
 
  processFound=false;
 //looping over processes to find one
  for(let i=0;i<numberOfProcesses;i++){
 
   if(!tookWhatINeedflag[i] && this.isAvailableSatisfyProcessNeed(available.data,needed.data[i])){
-    console.log('entered that if')
-    
+ 
 
     processFound=true;
     this.safeSequence.push(i);
@@ -144,7 +135,7 @@ while(this.safeSequence.length<numberOfProcesses  && processFound){
 
 for(let flag of tookWhatINeedflag){
   if(flag===false){
-    console.log('unsafe')
+ 
     this.isSafe=false;
     return false;
 
@@ -152,8 +143,7 @@ for(let flag of tookWhatINeedflag){
 
 }
 
-console.log('safe sequence:');
-console.log(this.safeSequence);
+
 this.isSafe=true;
 
 

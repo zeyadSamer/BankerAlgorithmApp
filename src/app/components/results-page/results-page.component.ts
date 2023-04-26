@@ -32,12 +32,11 @@ export class ResultsPageComponent implements OnInit {
     this.router.navigateByUrl('');
     this.bankerService.resetData();
      
-    console.log('hee')
+    
    }
 
 
 
-    console.log('isSafe',this.isSafe )
 
     if(this.isSafe){
       this.messageClass="safe"

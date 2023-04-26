@@ -41,7 +41,6 @@ new Matrix('Available Matrix',1,3)];
     this.selectedMatrixIndex++;
     }else{
 
-      console.log(this.matrices);
 
 
       this.bankerService.setMatricees(this.matrices); 
