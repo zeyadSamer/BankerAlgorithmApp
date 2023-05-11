@@ -41,9 +41,7 @@ new Matrix('Available Matrix',1,3)];
                 console.log('false')
                 return false;
               }
-
         }
-
     }  
    
   }else{

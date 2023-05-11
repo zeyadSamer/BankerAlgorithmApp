@@ -23,7 +23,25 @@ npm i
 ng serve -o
 ```
 
+
+## App logic src code
+
+- The app logic is divided into two parts : Component Logic  and Buisness Logic(Banker's Algorithm)
+- To see the component logic navigate to src/app/components folder ,There are three main files for each component which are component.ts,component.html,component.css, in addition to testing file 
+- To see the Banker's algorithm logic navigate to src/app/services/banker.service.ts file .This class is binded with the component (MatrixComponent) by dependency injection design pattern
+- All the defined classes in the src/app/models folder
+
+
+## App Deployment Link
+- https://64491d6ff870de0008826fe2--deadlock-detector.netlify.app/
+
+
+
+
 ## test example
+
+
+  
 
 
   {'Allocation Matrix':{
